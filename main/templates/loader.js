@@ -3375,7 +3375,7 @@ ready(function() {
 
     ajax.get("{{config.API_ROOT}}/{{key}}", {}, function(status, data) {
         if (status == 200) {
-            var ts = Sizzle("script[type='x-data-template']");
+            var ts = Sizzle("script[type='x-gridspree-template']");
             for (var t in ts) {
                 var template = ts[t].innerHTML;
                 var rendered = Mustache.render(template, JSON.parse(data));

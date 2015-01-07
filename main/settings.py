@@ -14,10 +14,10 @@ def _is_true(key):
 settings_vars = {
     'DEBUG': _is_true,
     'SECRET_KEY': _default(),
-    'SERVICE_NAME': _default('Data'),
-    'SERVICE_URL': _default('http://example.com'),
-    'CONTACT_EMAIL': _default('team@example.com'),
-    'API_ROOT': _default('//example.com'),
+    'SERVICE_NAME': _default('Gridspree'),
+    'SERVICE_URL': _default('http://gridspree.io'),
+    'CONTACT_EMAIL': _default('team@gridspree.io'),
+    'API_ROOT': _default('//gridspree.io'),
 
     # external APIs
     'GOOGLE_CLIENT_ID': _default(),
@@ -29,7 +29,7 @@ settings_vars = {
     'REDIS_HOST': _default('localhost'),
     'REDIS_PORT': _default('6379'),
     'REDIS_PASS': _default(None),
-    'FORMS_API': _default('//forms.brace.io') # for collecting feedback on the landing page
+    'FORMS_API': _default('//formspree.io') # for collecting feedback on the landing page
 }
 
 for k, v in settings_vars.items():

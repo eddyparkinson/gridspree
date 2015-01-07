@@ -56,7 +56,7 @@ $(document).ready(function() {
         <div class="container" id="title">
             <div class="col-1-1">
                 <img src="/static/img/logo.png" alt="" class="center animate dropIn">
-                <h1 class="center"><span class="caps">{{config.SERVICE_NAME}}</span> <small>by <a href="http://brace.io" style="display: inline-block; font-style: none; cursor: pointer; color:#aaa; margin-bottom: -10px;">Brace</a></small></h1>
+                <h1 class="center"><span class="caps">{{config.SERVICE_NAME}}</span></h1>
                 
             </div>
         </div>
@@ -114,7 +114,7 @@ $(document).ready(function() {
               <p class="card code" style="font-size:small"> 
                 &lt;script src="<span class="tooltip hint--top" data-hint="Include our script"><span class="attr">{{config.API_ROOT}}/READ_KEY.js</span></span>"&gt;&lt;/script&gt;<br><br>
                 <!-- &lt;!-- ... --&gt;<br><br> -->
-                &lt;script type="<span class="tooltip hint--top" data-hint="Data templates will be rendered using your data"><span class="attr">x-data-template</span></span>"&gt;<br>
+                &lt;script type="<span class="tooltip hint--top" data-hint="Data templates will be rendered using your data"><span class="attr">x-gridspree-template</span></span>"&gt;<br>
                 {% raw %}
                 &nbsp; &lt;ul&gt;<br>
                 &nbsp;&nbsp;&nbsp; <span class="tooltip hint--top" data-hint="For every row in the spreadsheet..."><span class="attr">{{#rows}}</span></span><br>
@@ -198,7 +198,7 @@ $(document).ready(function() {
             <div class="col-1-2">
                 <div class="card">
                     <h4>Who are you guys?</h4>
-                    <p>We're the same folks who make <a href="http://brace.io">Brace.io</a>, the simple way to host websites. {{config.SERVICE_NAME}} is a side project that solves a problem many of Brace.io users seem to face: incorporating dynamic data into otherwise static HTML pages.</p>
+                    <p>We're a community of developers that work together to create products. You can find us on <a href="https://assembly.com/gridspree">assembly</a>. {{config.SERVICE_NAME}} is a project that solves a problem many of us have faced: incorporating dynamic data into otherwise static HTML pages.</p>
                 </div>
             </div>
             <div class="col-1-2">
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
       <div class="container narrow block">
           <div class="col-1-2">
-            <p>{{config.SERVICE_NAME}} is a tool made by <a href="http://brace.io">Brace.io</a>. To contact us send an email to <a href="mailto:{{config.CONTACT_EMAIL}}">{{config.CONTACT_EMAIL}}</a> or use the form on the right.</p>
+            <p>{{config.SERVICE_NAME}} is a tool maintained by the <a href="http://assembly.com/gridspree">community at Assembly</a>. To contact us send an email to <a href="mailto:{{config.CONTACT_EMAIL}}">{{config.CONTACT_EMAIL}}</a> or use the form on the right.</p>
           </div>
           <div class="col-1-2">
             <form method="POST" action="{{config.FORMS_API}}/{{config.CONTACT_EMAIL}}">
