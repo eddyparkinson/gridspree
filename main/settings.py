@@ -15,9 +15,9 @@ settings_vars = {
     'DEBUG': _is_true,
     'SECRET_KEY': _default(),
     'SERVICE_NAME': _default('Gridspree'),
-    'SERVICE_URL': _default('http://gridspree.io'),
+    'SERVICE_URL': _default('https://gridspree.io'),
     'CONTACT_EMAIL': _default('team@gridspree.io'),
-    'API_ROOT': _default('//gridspree.io'),
+    'API_ROOT': _default('https://gridspree.io/ss'),
 
     # external APIs
     'GOOGLE_CLIENT_ID': _default(),
