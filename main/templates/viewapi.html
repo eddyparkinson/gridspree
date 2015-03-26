@@ -87,11 +87,47 @@ $(document).ready(function() {
 });
 </script>
 
+  <script src="/static/js/filepicker.js"></script>
+  <script>
+    function initPicker() {
+      // console.log("initPicker");
+      var autoShowPicker =  ("{{ filepicker }}" == "") ? false : true;  
+      
+      var browser_api_key = "{{ browser_api_key }}";
+      if (browser_api_key == "") {
+        alert("Error on server, missing setting: GOOGLE_BROWSER_API_KEY");
+      } else {
+        var picker = new FilePicker({
+          autoShowPicker:autoShowPicker,
+          apiKey: browser_api_key,
+          clientId: '{{ client_id }}',
+          buttonEl: document.getElementById('pick'),
+          onSelect: function(file) {
+            // console.log(file);
+            var redirecturl = "{{config.SERVICE_URL|safe}}/admin?url="+ file.alternateLink
+            // alert('To ' + redirecturl);
+            window.location.href = redirecturl;
+          }
+        });
+      }
+      // console.log("initPicker end");
+       
+    }
+  </script>
+  
+  <script src="https://www.google.com/jsapi?key={{ browser_api_key }}"></script>
+  <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+        
+    
+
   <div class="row section" id="header">
       <div class="container center">
           <h1 style="font-weight: 900;">{{title}}</h1>
       </div>
   </div>
+
+  
+         
 
   {% if key %}
 
@@ -226,15 +262,13 @@ $(document).ready(function() {
 
                 </table>
 
-                <form style="display:inline-block" method="GET" action="{{config.SERVICE_URL|safe}}/admin">
+
                   <table style="border:none; width:100%">
-                  <tr><td style="border:none;width:99%">
-                  <input style="margin:0" type="text" name="url" placeholder="Your Google spreadsheet URL" />
-                  </td><td style="border:none;white-space:nowrap;">
-                  <button type="submit" style="position:relative; padding: 0.7em;"><!--<i style="font-size:larger; position:absolute; top:9px" class="ion-social-googleplus"></i>&nbsp;--><span style="display:inline-block;">Add&nbsp;Spreadsheet</span></button>
+                  <tr><td style="border:none;white-space:nowrap;">
+                  <button type="submit" style="position:relative; padding: 0.7em;" id="pick"><!--<i style="font-size:larger; position:absolute; top:9px" class="ion-social-googleplus"></i>&nbsp;--><span style="display:inline-block;">Add&nbsp;Spreadsheet</span></button>
                   </td></tr>
                   </table>
-                  </form>
+
 
 
             </div>

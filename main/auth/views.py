@@ -11,7 +11,8 @@ def login(force=True):
     next = request.args.get('next') or settings.SERVICE_URL
     scopes = ["https://spreadsheets.google.com/feeds/",
               "https://www.googleapis.com/auth/plus.me",
-              "https://www.googleapis.com/auth/userinfo.email"]
+              "https://www.googleapis.com/auth/userinfo.email",
+              "https://www.googleapis.com/auth/drive.readonly"]
     params = {
         'response_type':'code',
         'access_type':'offline',

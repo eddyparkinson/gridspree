@@ -11,6 +11,7 @@ from ..utils import crossdomain, get_url
 from ..auth.model import Users
 from ..cachedsession import CachedHTTPSession
 from model import GSCredentials
+from .. import settings
 
 
 def _get_gspread_client(user, refresh=False):
@@ -212,7 +213,19 @@ def view_api():
             key=None
             writekey=None
             title="Your Spreadsheets"
-        return render_template('viewapi.html', key=key, writekey=writekey, title=title, spreadsheets=spreadsheets)
+            
+        # setup google filepicker
+        browser_api_key=settings.GOOGLE_BROWSER_API_KEY
+        client_id=settings.GOOGLE_CLIENT_ID
+        filepicker = request.args.get('filepicker')
+        if filepicker:
+            title="Pick a Spreadsheet"
+        else:
+            filepicker=""
+            
+        return render_template('viewapi.html', filepicker=filepicker, key=key,
+                               writekey=writekey, title=title, spreadsheets=spreadsheets,
+                               browser_api_key=browser_api_key, client_id=client_id)
 
 def js_gspread(key):
     return render_template('loader-ck.js', key=key)
