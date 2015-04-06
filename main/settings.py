@@ -22,6 +22,7 @@ settings_vars = {
     # external APIs
     'GOOGLE_CLIENT_ID': _default(),
     'GOOGLE_CLIENT_SECRET': _default(),
+    'GOOGLE_BROWSER_API_KEY': _default(),
     'MONGO_HOST': _default('localhost:27017'),
     'MONGO_USER': _default(),
     'MONGO_PASS': _default(),
