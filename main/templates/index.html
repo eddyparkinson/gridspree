@@ -175,14 +175,18 @@ $(document).ready(function() {
 
       <div class="container narrow block">
           <div class="col-1-1">
-          <h3>Try for yourself!</h3>
+          <!-- <h3>Try for yourself!</h3> -->
 
           <form style="display:inline-block" method="GET" action="{{config.SERVICE_URL|safe}}/admin">
             <table style="border:none">
-              <tr><td style="border:none;width:400px">
-            <input style="margin:0" type="text" name="url" placeholder="Your Google spreadsheet URL" />
-              </td><td style="border:none">
-            <button type="submit" style="position:relative; padding: 0.7em;"><!--<i style="font-size:larger; position:absolute; top:9px" class="ion-social-googleplus"></i>&nbsp;--><span style="display:inline-block;">Get&nbsp;Started</span></button>
+              <tr>
+                <td style="border:none;width:400px">
+                  <h3>Try for yourself!</h3>
+                  <!-- <input style="margin:0" type="text" name="url" placeholder="Your Google spreadsheet URL" /> -->
+                </td>
+                <td style="border:none">
+                  <input type="hidden" name="filepicker" value="true">
+                  <button type="submit" style="position:relative; padding: 0.7em;"><!--<i style="font-size:larger; position:absolute; top:9px" class="ion-social-googleplus"></i>&nbsp;--><span style="display:inline-block;">Get&nbsp;Started</span></button>
               </td></tr>
             </table>
             <div style="font-size: small; float:left">No spreadsheet? <a href="https://drive.google.com/previewtemplate?id=0AoFkkLP2MB8kdFd4bEJ5VzR2RVdBQkVuSW91WE1zZkE&;mode=public&;pli=1#" target="_blank">Use this template</a>.</div>
