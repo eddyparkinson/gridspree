@@ -100,3 +100,36 @@ Gridspree also requires a google developer credentials with the following APIs e
 
 Take a look at the `main/settings.py` file for a list of environment variables that should be set in order for Data to work correctly.
 
+#### Setup OAuth2
+
+- goto: https://console.developers.google.com/project
+- Click "Create Project" - 
+-  enter a "Project Name",  and select an account
+- Click "Create" 
+- on the left expand "APIs & auth" -> APIs
+- find "Drive API" and enable it
+- find "Google Picker API" and enable it
+- find "Google+ API" and enable it
+- You should now have 8 APIs - BigQuery API, Debuglet Controller API, Drive API, Google Cloud SQL,
+Google Cloud Storage, Google Cloud Storage JSON API, Google Picker API, Google+ API
+
+- on the left expand  "APIs & auth" -> "credential"
+- Click "Create new Client ID"
+- Select "web application" and Click "Configure consent screen"
+- Select an "email address" and enter a "Product name"
+- Click "Save"
+- Click "Create Client ID"
+- set the "Redirect URIs"  e.g. for testing  http://127.0.0.1:5000/auth/authorize
+- set "Javascript Origins" e.g. for testing http://127.0.0.1:5000/
+
+- Under "Public API access" click "Create new Key"
+- Click "Browser Key"
+- set "Referers"  e.g. for testing http://127.0.0.1:5000/*
+
+#### Set the environment vars 
+- GOOGLE_CLIENT_ID=xxxxxxxxxxxx.apps.googleusercontent.comDEBUG=true
+- GOOGLE_CLIENT_SECRET=xxxxxxxxxx
+- GOOGLE_BROWSER_API_KEY=xxxxxxxxxx 
+- API_ROOT=http://127.0.0.1:5000/ss
+- SERVICE_URL=http://127.0.0.1:5000
+- SECRET_KEY=xxxx-mongodb key
